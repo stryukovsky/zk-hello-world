@@ -13,7 +13,7 @@ module.exports = {
 
   networks: {
     zkSyncTestnet: {
-      url: "https://zksync2-testnet.zksync.dev",
+      url: process.env.ZKSYNC_URL,
       ethNetwork: process.env.GOERLI_URL, // Can also be the RPC URL of the network (e.g. `https://goerli.infura.io/v3/<API_KEY>`)
       zksync: true,
     },
