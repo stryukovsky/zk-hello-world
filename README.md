@@ -8,3 +8,7 @@ Compile contract
 ```
 yarn hardhat compile
 ```
+Deploy
+```
+yarn hardhat deploy-zksync
+```
