@@ -7,18 +7,16 @@ config();
 
 // An example of a deploy script that will deploy and call a simple contract.
 export default async function (hre: HardhatRuntimeEnvironment) {
-  console.log(`Running deploy script for the Greeter contract`);
+  console.log(`Running deploy script for the Token contract`);
 
   // Initialize the wallet.
   const wallet = new Wallet(process.env.PRIVATE_KEY as string);
 
   // Create deployer object and load the artifact of the contract you want to deploy.
   const deployer = new Deployer(hre, wallet);
-  const artifact = await deployer.loadArtifact("Greeter");
+  const artifact = await deployer.loadArtifact("Token");
 
-  // Estimate contract deployment fee
-  const greeting = "Hi there!";
-  const deploymentFee = await deployer.estimateDeployFee(artifact, [greeting]);
+  const deploymentFee = await deployer.estimateDeployFee(artifact, []);
 
   // OPTIONAL: Deposit funds to L2
   // Comment this block if you already have funds on zkSync.
